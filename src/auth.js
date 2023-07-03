@@ -580,29 +580,29 @@ exports.getMonthlyCalorieLog = async (req, res) => {
 }
 
 // Get Food Data
-exports.getFoodData = async (req, res) => {
-  const { foodName } = req.params
+// exports.getFoodData = async (req, res) => {
+//   const { foodName } = req.params
 
-  const docRef = db.collection('food-calories').doc(foodName)
-  try {
-    const doc = await docRef.get()
-    if (!doc.exists) {
-      return res.status(500).json({
-        error: true,
-        message: 'Data does not exist'
-      })
-    }
-    return res.status(200).json({
-      error: false,
-      data: doc.data()
-    })
-  } catch (e) {
-    return res.status(500).json({
-      error: true,
-      message: 'Server error'
-    })
-  }
-}
+//   const docRef = db.collection('food-calories').doc(foodName)
+//   try {
+//     const doc = await docRef.get()
+//     if (!doc.exists) {
+//       return res.status(500).json({
+//         error: true,
+//         message: 'Data does not exist'
+//       })
+//     }
+//     return res.status(200).json({
+//       error: false,
+//       data: doc.data()
+//     })
+//   } catch (e) {
+//     return res.status(500).json({
+//       error: true,
+//       message: 'Server error'
+//     })
+//   }
+// }
 
 // Get All Foods Data
 exports.getAllFoodsData = async (req, res) => {
