@@ -1,16 +1,20 @@
 steps:
-- name: 'gcr.io/cloud-builders/gsutil'
-  args: ['cp', 'gs://calorify-bucket/.env', './.env']
-- name: 'gcr.io/cloud-builders/gsutil'
-  args: ['cp', 'gs://calorify-bucket/serviceAccountKey.json', './serviceAccountKey.json']
+  - name: "gcr.io/cloud-builders/gsutil"
+    args: ["cp", "gs://calorify-pi/.env", "./.env"]
+  - name: "gcr.io/cloud-builders/gsutil"
+    args:
+      [
+        "cp",
+        "gs://calorify-pi/serviceAccountKey.json",
+        "./serviceAccountKey.json",
+      ]
 
-
-- name: 'gcr.io/cloud-builders/gcloud'
-  args:
-  - 'app'
-  - 'deploy'
-  timeout: '600s'
-  dir: './'
+  - name: "gcr.io/cloud-builders/gcloud"
+    args:
+      - "app"
+      - "deploy"
+    timeout: "600s"
+    dir: "./"
 
 options:
-  logging: 'CLOUD_LOGGING_ONLY'
+  logging: "CLOUD_LOGGING_ONLY"
