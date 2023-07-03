@@ -1,0 +1,9 @@
+runtime: nodejs18
+service: backend
+
+env_variables:
+  TZ: Asia/Jakarta
+
+handlers:
+  - url: /.*
+    script: auto
