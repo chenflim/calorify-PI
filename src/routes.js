@@ -15,7 +15,7 @@ const {
   getDailyCalorieLog,
   getMonthlyCalorieLog,
   getAllFoodsData,
-  // getFoodData,
+  getFoodData,
   updateUserAssessment
 } = require('./auth')
 
@@ -50,6 +50,6 @@ router.get('/monthly-calorielog/:userId/:month-:year', getMonthlyCalorieLog)
 
 router.get('/foods', getAllFoodsData)
 
-// router.get('/foods/:foodName', getFoodData)
+router.get('/foods/:foodName', getFoodData)
 
 module.exports = router
